@@ -10,7 +10,7 @@ Our swarm runs algorithms written in the Python programming language (python 2.7
 
 If using a later version of python, please make sure that any libraries used in the algorithm are available in the python version specified above.
 
-To begin coding, we recommend using an IDE (Integrated Development Environment). If the reader doesn't have a currently prefered IDE, we recommend Visual Studio Code (https://code.visualstudio.com/download) while is widely used and available for Windows, Mac, and Ubuntu. 
+To begin coding, we recommend using an IDE (Integrated Development Environment). If the reader doesn't have a currently prefered IDE, we recommend Visual Studio Code (https://code.visualstudio.com/download) which is widely used and available for Windows, Mac, and Ubuntu. 
 
 ### Github
 For our testbed, we currently use the popular system, Github, as a platform for users to submit their experiments to and receive results. To get started, make an account on https://github.com/ (a free account will be sufficient for our system). There are two popular ways to use Github on your local machine, which are explained below.
