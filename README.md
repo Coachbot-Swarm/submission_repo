@@ -35,7 +35,9 @@ The third repository seen in the organization is *Examples*. This repository con
 7. Push these 4 files to the main branch of the private repository
 8. Clone the *submission_repo* repository to your local system
 9. Copy just the renamed .json file to the *submission_repo* and push to the main branch
-10. Your example code has now been submitted to run on the Coachbot Swarm Testbed
+10. Your example code has now been submitted to run on the Coachbot Swarm Testbed (Note: when the testbed is running, the submission is immediately loaded locally and deleted from the repository)
+11. Users can expect to receive up to 3 emails from the system per submission, one confirming validity, one for the start of the experiment, and the last being a notification of completion.
+12. The results of the experiment will be found on a new branch in the user's private repository with the appropriate time stamp.
 
 ## Writing Code for the Coachbot Swarm
 ### Experiment Code (usr_code.py)
