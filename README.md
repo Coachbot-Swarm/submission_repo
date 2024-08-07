@@ -2,7 +2,7 @@
 
 The Coachbot Swarm and this repo is owned and maintained by the Rubenstein Lab at Northwestern University. If you have any questions, comments or concerns, please email us at coachbotswarmsystem@gmail.com and someone from our team will get back to you. We ask that you respect the system and help us keep it accessible to fellow swarm enthusiasts by adhering to the guidelines explained in this guide. We reserve the right to refuse access to any individuals who are not courteous to the system or the Coachbot team.
 
-Check the user guide for more detailed information about how to use the system and troubleshooting: ***https://dornadulavaishnavi.github.io/coachbotuserguide.github.io/***
+Check the user guide for more detailed information about how to use the system and troubleshooting: ***https://coachbotswarm.github.io/User-Guide/***
 
 ## Required Installs
 ### Python
