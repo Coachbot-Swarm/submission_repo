@@ -55,7 +55,7 @@ These functions are available for a user to access the robot's capabilities and 
 
 ##### robot.set_vel(left,right)
 
-Parameters: left and right should be whole numbers between -50 and 50 that indicate wheel speeds. 0 being no movement and 50 being the fastest possible speed. The negative values indicate that the wheel should spin backwards at that speed. These values have a unit of 
+Parameters: left and right should be whole numbers between -50 and 50 that indicate wheel speeds. 0 being no movement and 50 being the fastest possible speed. The negative values indicate that the wheel should spin backwards at that speed.
 
 Output: none
 
@@ -69,7 +69,7 @@ Output: none
 
 Example: robot.set_led(30,100,0)
 
-##### robot.id (simulation) or robot.virtual_id(physical system)
+##### robot.id(simulation) or robot.virtual_id(physical system)
 
 Parameters: none
 
@@ -87,7 +87,7 @@ Example: curr_time = robot.get_clock()
 
 ##### robot.send_msg(msg)
 
-Parameters: msg should be a string that is less than 64 bytes or it will be truncated. This msg can be the output of the struck.pack() function explained in the section below.
+Parameters: msg should be a string/struct that is less than 64 bytes or it will be truncated. This msg can be the output of the struck.pack() function explained in the section below.
 
 Output: True is successful, False if not
 
@@ -105,7 +105,7 @@ Example: msgs = robot.recv_msg()
 
 Parameters: none
 
-Output: a list with the [x,y,theta], check to see that this output is valid before using it
+Output: a list with the [x,y,theta], check to see that this output is valid before using it or None if no position has been updated for the robot
 
 Example: pose = robot.get_pose()
 
