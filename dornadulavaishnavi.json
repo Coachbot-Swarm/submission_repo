@@ -1,0 +1,5 @@
+{
+  "usercode": "delay.py",
+  "initialpositions": "init_pose_testing.csv",
+  "email": "email.txt"
+}
