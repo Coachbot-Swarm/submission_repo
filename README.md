@@ -73,20 +73,5 @@ Check the User Guide for more details on the guidelines of these input files.
 
 ## What to Expect from Running an Experiment on the Physical Coachbot Swarm System
 
-Assuming the submission was valid and passed our verification, users will receive an email alerting them that their experiment's results are ready. The results of the algorithm will be pushed to a seperate branch in the private repo. This branch will be named with the time stamp of when the results were uploaded to the private repository. This branch will roughly resemble the following directory tree (new files and directories are in bold).
-	
-<p>timestamp_branch_name <br>
-&emsp; usr_code.py <br>  
-&emsp; init_poses.csv <br>
-&emsp; email.txt <br>
-&emsp; <strong>init_pose_errors.csv</strong> <br>
-&emsp; <strong>sim_data.txt</strong> <br>
-&emsp; <strong>sim_output.mp4</strong> <br>
-&emsp; <strong>output_logs</strong> <br>
-&emsp; &emsp; <strong>ID_mapping.csv</strong> <br>
-&emsp; &emsp; <strong>camera_video.mp4</strong> <br>
-&emsp; &emsp; <strong>#_logging.csv</strong> <br>
-&emsp; &emsp; <strong>#</strong> <br>
-&emsp; &emsp; <strong>automation_errors</strong></p>
-
-More information explaining the contents of these files can be found in the User Guide: ***https://coachbotswarm.github.io/User-Guide/#getting-the-results***
+Assuming the submission was valid and passed our verification, users will receive an email alerting them that their experiment's results are ready. The results of the algorithm will be pushed to a seperate branch in the private repo. This branch will be named with the time stamp of when the results were uploaded to the private repository. 
+An explaination of the returned files can be found in the User Guide: ***https://coachbotswarm.github.io/User-Guide/#getting-the-results***
