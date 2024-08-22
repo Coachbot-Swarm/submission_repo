@@ -48,91 +48,20 @@ The third repository seen in the organization is *Examples*. This repository con
 
 ## Writing Code for the Coachbot Swarm
 ### Experiment Code (usr_code.py)
-The experiment code must be written in a particular format to run properly on the swarm and every robot in the experiment will run the same user code. A skeleton reference of the this usr_code file (usr_code.py) is provided in the repository, as well as a file showing example usage of the provided API calls (usr_code_api_examples.py). These files contain the proper format to begin writing an algorithm for the robots. The robots run the *def usr(robot)* function similar to a *main* function. Within this function, users write a *while True* loop for the robots to continuously execute until some user specified return condition is met. We highly recommend writting statements into the *experiment_log* folder to aid in debugging.
+The experiment code must be written in a particular format to run properly on the swarm and every robot in the experiment will run the same user code. A skeleton reference of the this usr_code file (usr_code.py) is provided in the repository, as well as a file showing example usage of the provided API calls (usr_code_api_examples.py). These files contain the proper format to begin writing an algorithm for the robots. More information can be found in the User Guide: ***[https://coachbotswarm.github.io/User-Guide/#available-robot-functions](https://coachbotswarm.github.io/User-Guide/#user-code)***
 
 #### Robot API Functions
-These functions are available for a user to access the robot's capabilities and perform tasks such as motion, messaging, and localization. Check out our API Overview tutorial here for a quick introduction: [https://youtu.be/KC8QtUyUukE](https://youtu.be/Z8qkd0gtyGM)
+Functions are available for a user to access the robot's capabilities and perform tasks such as motion, messaging, and localization. Read about these functions and their usage in the User Guide: ***https://coachbotswarm.github.io/User-Guide/#available-robot-functions***
 
-##### robot.set_vel(left,right)
-
-Parameters: left and right should be whole numbers between -50 and 50 that indicate wheel speeds. 0 being no movement and 50 being the fastest possible speed. The negative values indicate that the wheel should spin backwards at that speed.
-
-Output: none
-
-Example: robot.set_vel(30,-40)
-
-##### robot.set_led(r,g,b)
-
-Parameters: r,g,b should be integers between and 0 and 100 to set the color and brightness of the onboard LED
-
-Output: none
-
-Example: robot.set_led(30,100,0)
-
-##### robot.id(simulation) or robot.virtual_id(physical system)
-
-Parameters: none
-
-Output: An integer that is the virtual ID of the robot. 
-
-Example: id = robot.id
-
-##### robot.get_clock()
-
-Parameters: none
-
-Output: a float of the number of seconds elapsed since the program started
-
-Example: curr_time = robot.get_clock()
-
-##### robot.send_msg(msg)
-
-More information about this send function and the receive function are explained in the Useer Guide.
-Parameters: msg should be a string/struct that is less than 64 bytes or it will be truncated. This msg can be the output of the struck.pack() function explained in the section below.
-
-Output: True is successful, False if not
-
-Example: robot.send_msg(struct.pack(‘fffii’, float_0, float_1, float_2, int_0, int_1))
-
-##### robot.recv_msg()
-
-Parameters: none
-
-Output: Returns the messages in the buffer since the last call of this function. 
-
-Example: msgs = robot.recv_msg()
-
-##### robot.get_pose()
-
-Parameters: none
-
-Output: a list with the [x,y,theta], check to see that this output is valid before using it or None if no position has been updated for the robot
-
-Example: pose = robot.get_pose()
-
-##### robot.delay()
-
-Parameters: an integer value in milliseconds, default is 20ms but a different integer parameter can be specified
-
-Output: none
-
-Example: robot.delay(500)
+Check out our API Overview tutorial here for a quick introduction: [https://youtu.be/KC8QtUyUukE](https://youtu.be/Z8qkd0gtyGM)
 
 ### Initial Swarm Positions (init_pose.csv)
-This file specifies the starting position of each robot needed in the experiment. The values specified must follow the rules listed below. The x and y positions are in meters while the theta value is in radians (-2π, 2π). The arena orientation and sizing is further specified in the User Guide linked at the top of this quickstart.
-- Each row should specify an ID number, x position, y position, and theta angle in radians. The ID number should be a whole number integer, while the x,y, and theta positions can be floats. 
-- The play field is sized at -1.2m to 1.0m in the x and -1.4m to 2.35m in the y so the x and y positions must be within those dimensions. 
-- There are currently 50 robots active in the Coachbot swarm so please limit the number of robots requested to 50.
-- The ID number must be between 0 and 49.
-- Each robot must start at least 25 cm away from each other.
+This file specifies the starting position of each robot needed in the experiment. The values specified must follow the rules listed in the User Guide at ***https://coachbotswarm.github.io/User-Guide/#initial-positions***
 
-If the init_pose.csv file does not abide by the rules above, users will receive an email and can check the input_pose_errors.csv file for details on where it failed. 
+If the init_pose.csv file does not abide by the rules above, users will receive an email and an error file specifying the issues. 
 
 ## Acessing and Running Experiments on the Coachbot Swarm Simulator
 Our testbed features a corresponding simulator that is compatible with Windows, Mac, and Linux machines. This tool is publicly located through Github and can be used to test algorithms at faster speeds and larger swarm sizes before being run on the physical testbed (***https://github.com/michelleezhang/swarm_simulation/tree/master***). Exact instructions on using this simulator are located in the README of its repository. Once the results on the simulator match the expectations of the user, it is then ready to be run on the physical testbed.
-
-## Changing the Code to Run on the Physical Coachbot Swarm System
-To effectively change the code of the algorithm from running on the simulator to the physical testbed, a few function names currently need to be changed. The physical robots use the function robot.virtual_id() to access their ID numbers instead of the simulator's equivalent function, robot.id. Similarly, instead of print statements used in the simulator, the physical testbed can track these statements through the user writing these statements in a log.write() as shown in the example *usr_code.py*.
 
 ## Submitting Code to be Run on the Physical Coachbot Swarm System
 
@@ -160,4 +89,4 @@ Assuming the submission was valid and passed our verification, users will receiv
 &emsp; &emsp; <strong>#</strong> <br>
 &emsp; &emsp; <strong>automation_errors</strong></p>
 
-The <strong>init_pose_errors.csv</strong> will contain the contents of <strong>init_poses.csv</strong> or list any issues with the initial poses specified. The output_logs folder will hold all the outputs from the algorithm run. Since the ID specified in the <strong>init_poses.csv</strong> file might not match the physical robot ID, the <strong>ID_mapping.csv</strong> file specifies which robot corresponds to which virtual ID. The .mp4 file is the recording of the run from our overhead raspberry pi camera. The logging files will be named with the virtual ID of the robot it pertains to and contain the position of the corresponding robot at every timestep of the run. This csv file is formatted in a timestep, x position, y position, theta angle in radians for each line. The <strong>#</strong> file is the virtual ID of the pertaining robot and will have any information that was specified to be written to the <strong>experiment_log</strong> file in the user code. The <strong>automation_errors</strong> file will list any high level errors such as runtime limits or robots trying to exit the play field.
+More information explaining the contents of these files can be found in the User Guide: ***https://coachbotswarm.github.io/User-Guide/#getting-the-results***
