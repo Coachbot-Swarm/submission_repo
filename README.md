@@ -4,6 +4,8 @@ The Coachbot Swarm and this repo is owned and maintained by the Rubenstein Lab a
 
 This quickstart quide is a great place to start to build your first experiment but check the user guide for more detailed information about how to use the system and troubleshooting: ***https://coachbotswarm.github.io/User-Guide/***
 
+If you have any questions about setting up the experiment you would like to run, please reach out to us with any inquiries.
+
 ## Required Installs
 ### Python
 Our swarm runs algorithms written in the Python programming language (python 2.7.16). To install python, please visit the official downloads page (https://www.python.org/downloads/) and select the appropriate OS for your machine and scroll down to find the python 2.7.16 release. Once the python set up prompt is complete, ensure that everything is installed properly by opening command prompt (or OS equivalent) and running *python --version*. This should output python 2.7.16 in the terminal. 
