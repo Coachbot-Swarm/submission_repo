@@ -1,0 +1,5 @@
+{
+  "usercode": "send_msg.py",
+  "initialpositions": "init_pose_api_examples.csv",
+  "email": "email.txt"
+}
