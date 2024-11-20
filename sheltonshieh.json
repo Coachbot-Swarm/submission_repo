@@ -1,5 +1,5 @@
 {
-  "usercode": "usr_code.py",
+  "usercode": "bolt.py",
   "initialpositions": "init_pose.csv",
   "email": "email.txt"
 }
